@@ -1,16 +1,24 @@
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
   env: {
     browser: true,
-    node: true
+    node: true,
   },
-  extends: 'standard',
+  extends: [
+    'eslint:recommended',
+    'plugin:vue/recommended',
+  ],
+  parserOptions: {
+    parser: 'babel-eslint',
+  },
   // required to lint *.vue files
   plugins: [
-    'html'
+    'html',
   ],
   // add your custom rules here
-  rules: {},
-  globals: {}
-}
+  rules: {
+    'comma-dangle': ['error', 'always-multiline'],
+    'semi': ['error', 'always'],
+  },
+  globals: {},
+};
